@@ -366,8 +366,7 @@ export const GmailHeader: React.FC<GmailHeaderProps> = ({
                   </div>
                 </div>
 
-                <div className="pt-2 border-t border-gray-200 dark:border-[#686B6C] flex items-center justify-between text-xs">
-                  <span className="text-[11px] text-gray-500 dark:text-[#686B6C]">Google AI Studio Engine</span>
+                <div className="pt-2 border-t border-gray-200 dark:border-[#686B6C] flex items-center justify-end text-xs">
                   <button
                     onClick={() => setProfileOpen(false)}
                     className="px-3 py-1 bg-gray-100 hover:bg-gray-200 dark:bg-[#000000] dark:border dark:border-[#686B6C] dark:hover:bg-[#686B6C]/30 text-[#FFFFFF] rounded-lg text-xs font-medium"
