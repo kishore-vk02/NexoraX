@@ -136,8 +136,8 @@ Certified by: EmailForensics AI Threat Intelligence Gateway & PoA Blockchain Con
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-md p-4 overflow-y-auto">
-      <div className={`relative w-full max-w-4xl rounded-2xl border shadow-2xl overflow-hidden my-8 transition-colors ${
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-md p-2 sm:p-4 overflow-y-auto">
+      <div className={`relative w-full max-w-4xl max-h-[92vh] flex flex-col rounded-2xl border shadow-2xl overflow-hidden my-2 sm:my-8 transition-colors ${
         isLight
           ? 'bg-white border-gray-200 text-gray-900'
           : 'border-[#1A1A1F] bg-[#0A0A0F] text-gray-200'

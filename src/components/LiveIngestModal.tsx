@@ -292,8 +292,8 @@ export const LiveIngestModal: React.FC<LiveIngestModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#050507]/90 backdrop-blur-md p-4 overflow-y-auto font-mono">
-      <div className="relative w-full max-w-3xl rounded-md border border-[#1A1A1F] bg-[#0A0A0F] shadow-[0_0_50px_rgba(0,0,0,0.9)] overflow-hidden my-8">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#050507]/90 backdrop-blur-md p-2 sm:p-4 overflow-y-auto font-mono">
+      <div className="relative w-full max-w-3xl max-h-[92vh] flex flex-col rounded-md border border-[#1A1A1F] bg-[#0A0A0F] shadow-[0_0_50px_rgba(0,0,0,0.9)] overflow-hidden my-2 sm:my-8">
         {/* Header */}
         <div className="flex items-center justify-between border-b border-[#1A1A1F] px-6 py-4 bg-[#0A0A0F]">
           <div className="flex items-center gap-3">

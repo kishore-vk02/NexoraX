@@ -124,18 +124,30 @@ export const GmailSidebar: React.FC<GmailSidebarProps> = ({
   ];
 
   return (
-    <aside
-      id="gmail-sidebar"
-      className={`transition-all duration-200 shrink-0 flex flex-col justify-between select-none ${
-        isOpen ? 'w-64 sm:w-68' : 'w-16 sm:w-18'
-      } ${
-        isLight
-          ? 'bg-[#f6f8fc] border-r border-[#e5e7eb] text-[#444746]'
-          : isCyber
-          ? 'bg-[#0A0A0F] border-r border-[#00FF41]/20 text-[#E5E7EB]'
-          : 'bg-[#000000] border-r border-[#686B6C] text-[#FFFFFF]'
-      }`}
-    >
+    <>
+      {/* Mobile Backdrop Overlay when sidebar drawer is open */}
+      {isOpen && (
+        <div
+          onClick={() => onSelectTab(activeTab)}
+          className="fixed inset-0 bg-black/50 z-40 md:hidden backdrop-blur-sm transition-opacity"
+          aria-hidden="true"
+        />
+      )}
+
+      <aside
+        id="gmail-sidebar"
+        className={`fixed md:relative inset-y-0 left-0 z-50 md:z-auto transition-all duration-300 ease-in-out shrink-0 flex flex-col justify-between select-none ${
+          isOpen
+            ? 'w-64 sm:w-68 translate-x-0'
+            : '-translate-x-full md:translate-x-0 md:w-16 sm:md:w-18'
+        } ${
+          isLight
+            ? 'bg-[#f6f8fc] border-r border-[#e5e7eb] text-[#444746]'
+            : isCyber
+            ? 'bg-[#0A0A0F] border-r border-[#00FF41]/20 text-[#E5E7EB]'
+            : 'bg-[#000000] border-r border-[#686B6C] text-[#FFFFFF]'
+        }`}
+      >
       <div className="p-3 space-y-4 overflow-y-auto">
         {/* Gmail Compose / Ingest Button */}
         <div className="pt-1">
@@ -269,5 +281,6 @@ export const GmailSidebar: React.FC<GmailSidebarProps> = ({
         </div>
       )}
     </aside>
-  );
+  </>
+);
 };

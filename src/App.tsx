@@ -70,7 +70,7 @@ export default function App() {
   ]);
 
   const [activeTab, setActiveTab] = useState<GmailNavigationTab>('inbox');
-  const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [sidebarOpen, setSidebarOpen] = useState(() => typeof window !== 'undefined' && window.innerWidth >= 768);
   const [searchQuery, setSearchQuery] = useState('');
 
   // Selected Email for Reading / Forensic Inspection
@@ -561,6 +561,9 @@ export default function App() {
           onSelectTab={(tab) => {
             setActiveTab(tab);
             setSelectedIncidentId(null);
+            if (typeof window !== 'undefined' && window.innerWidth < 768) {
+              setSidebarOpen(false);
+            }
           }}
           inboxCount={cleanEmails.length}
           spamCount={spamEmails.length}
